@@ -2,6 +2,7 @@
   margin-bottom: 10px;
   width: 100%;
   transition: width 1s;
+  position: relative;
 
   &--active {
     width: 80%;
@@ -13,6 +14,17 @@
   background: none;
   border: none;
   text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.category__editButton {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
 
   &:hover {
     cursor: pointer;

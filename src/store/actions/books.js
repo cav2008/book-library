@@ -23,20 +23,16 @@ export const selectCategory = (id) => {
 
 export const fetchCategoriesData = (url) => {
   return (dispatch) => {
-    fetch(url).then(
-      (result) => {
-        dispatch(saveCategories(result.data));
-      },
-    );
+    fetch(url).then((result) => {
+      dispatch(saveCategories(result.data));
+    });
   };
 };
 
 export const fetchBooksData = (url) => {
   return (dispatch) => {
-    fetch(url).then(
-      (result) => {
-        dispatch(saveBooks(result.data));
-      },
-    );
+    fetch(url).then((result) => {
+      dispatch(saveBooks(result.data));
+    });
   };
 };

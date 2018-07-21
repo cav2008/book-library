@@ -48,6 +48,7 @@
     "webpack-serve": "^1.0.2"
   },
   "devDependencies": {
+    "babel-plugin-jsx-control-statements": "^3.2.8",
     "concurrently": "^3.5.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
