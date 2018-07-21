@@ -1,0 +1,28 @@
+{
+  "extends": ["airbnb-base", "plugin:react/recommended"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-body-style": "off"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react", "import"],
+  "settings": {
+    "import/resolver": {
+      "webpack": "webpack.config.js"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  }
+}
