@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Category from '../Category/Category';
+import Category from '../../store/containers/Category';
 
 import styles from './Categories.scss';
 
@@ -13,8 +13,7 @@ const Categories = (props) => {
           return (
             <Category
               key={index}
-              name={item.name}
-              color={item.color}
+              category={item}
             />
           );
         })}

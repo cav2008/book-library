@@ -14,6 +14,18 @@ export default class App extends React.Component {
     super(props);
     this.props.fetchCategoriesData('http://localhost:3000/categories');
     this.props.fetchBooksData('http://localhost:3000/books');
+
+    this.getFilteredBooks = this.getFilteredBooks.bind(this);
+  }
+
+  getFilteredBooks() {
+    if (!this.props.selectedCategoryId) {
+      return this.props.books;
+    }
+
+    return this.props.books.filter((item) => {
+      return item.categoryId === this.props.selectedCategoryId;
+    });
   }
 
   render() {
@@ -21,7 +33,7 @@ export default class App extends React.Component {
       // <div className={cx('app', { 'app--red': Math.random() > 0.5 })}>VIOOH Technical test</div>
       <div className={styles.app}>
         <Categories categories={this.props.categories} />
-        <Books categories={this.props.categories} books={this.props.books} />
+        <Books categories={this.props.categories} books={this.getFilteredBooks()} />
       </div>
     );
   }
@@ -30,6 +42,7 @@ export default class App extends React.Component {
 App.propTypes = {
   categories: PropTypes.array.isRequired,
   books: PropTypes.array.isRequired,
+  selectedCategoryId: PropTypes.number.isRequired,
   fetchCategoriesData: PropTypes.func.isRequired,
   fetchBooksData: PropTypes.func.isRequired,
 };

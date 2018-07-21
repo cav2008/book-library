@@ -11,6 +11,7 @@ function mapStateToProps(state) {
   return {
     categories: state.books.categories,
     books: state.books.books,
+    selectedCategoryId: state.books.selectedCategoryId,
   };
 }
 

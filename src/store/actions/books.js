@@ -14,6 +14,13 @@ export const saveBooks = (books) => {
   };
 };
 
+export const selectCategory = (id) => {
+  return {
+    type: 'SELECT_CATEGORY',
+    id,
+  };
+};
+
 export const fetchCategoriesData = (url) => {
   return (dispatch) => {
     fetch(url).then(

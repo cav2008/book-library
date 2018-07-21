@@ -1,0 +1,14 @@
+.category {
+  margin-bottom: 10px;
+}
+
+.category__button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
