@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Book from '../Book/book';
+import Book from '../Book/Book';
+
+import styles from './Books.scss';
 
 const Books = (props) => {
   return (
-    <div>
+    <div className={styles.books}>
       <h1>Books</h1>
-      <div>
+      <div className={styles.books__wrapper}>
         {props.books.map((item, index) => {
           return (
             <Book

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './App.scss';
+
 import Categories from '../Categories/Categories';
 import Books from '../Books/Books';
+
+import styles from './App.scss';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +19,7 @@ export default class App extends React.Component {
   render() {
     return (
       // <div className={cx('app', { 'app--red': Math.random() > 0.5 })}>VIOOH Technical test</div>
-      <div>
+      <div className={styles.app}>
         <Categories categories={this.props.categories} />
         <Books categories={this.props.categories} books={this.props.books} />
       </div>
