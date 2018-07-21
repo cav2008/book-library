@@ -8,6 +8,7 @@ import { selectCategory } from '../actions/books';
 function mapStateToProps(state, ownProps) {
   return {
     category: ownProps.category,
+    selectedCategoryId: state.books.selectedCategoryId,
   };
 }
 
