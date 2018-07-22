@@ -42,7 +42,7 @@ export default class Category extends React.Component {
         <Choose>
           <When condition={this.state.isEdit}>
             <div>
-              <input type="text" onBlur={this.handleEditClick} autoFocus />
+              <input className={styles.category__input} type="text" onBlur={this.handleEditClick} autoFocus />
             </div>
           </When>
           <Otherwise>

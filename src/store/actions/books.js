@@ -16,7 +16,7 @@ export const saveBooks = (books) => {
 
 export const fetchCategoriesData = (url) => {
   return (dispatch) => {
-    fetch(url).then((result) => {
+    return fetch(url).then((result) => {
       dispatch(saveCategories(result.data));
     });
   };
@@ -24,7 +24,7 @@ export const fetchCategoriesData = (url) => {
 
 export const fetchBooksData = (url) => {
   return (dispatch) => {
-    fetch(url).then((result) => {
+    return fetch(url).then((result) => {
       dispatch(saveBooks(result.data));
     });
   };

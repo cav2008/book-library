@@ -46,10 +46,19 @@ test('should call selectCategory() once', () => {
 });
 
 test('should NOT call changeCategoryName() on edit button click', () => {
-  comp.find('.category__editButton').simulate('click', { target: '' });
+  comp.find('.category__editButton').simulate('click', { target: { value: '' } });
   expect(spyChangeCategoryName.called).to.be.false;
 });
 
 test('should set isEdit state true', () => {
   expect(comp.instance().state.isEdit).to.be.true;
+});
+
+test('should render input text field', () => {
+  expect(comp.find('.category__input').length).to.be.equal(1);
+});
+
+test('should call changeCategoryName() on passing value', () => {
+  comp.find('.category__input').simulate('blur', { target: { value: 2 } });
+  expect(spyChangeCategoryName.calledOnce).to.be.true;
 });
