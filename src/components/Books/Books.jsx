@@ -16,7 +16,7 @@ const Books = (props) => {
               title={item.title}
               description={item.description}
               thumbnail={item.thumbnail}
-              category={Book.getCategory(item.categoryId, props.categories)}
+              category={Books.getCategory(item.categoryId, props.categories)}
             />
           );
         })}
@@ -25,8 +25,8 @@ const Books = (props) => {
   );
 };
 
-Book.getCategory = (id, category) => {
-  return category.find(item => item.id === id);
+Books.getCategory = (id, categories) => {
+  return categories.find(item => item.id === id);
 };
 
 Books.propTypes = {

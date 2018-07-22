@@ -3,7 +3,7 @@
     "start": "concurrently --kill-others \"webpack-serve --config ./webpack.config.js\" \"node api\"",
     "build": "webpack",
     "lint": "eslint --ext .jsx,.js ./src ",
-    "test": "yarn jest"
+    "test": "yarn jest --coverage"
   },
   "dependencies": {
     "autoprefixer": "^8.5.0",
@@ -49,12 +49,14 @@
   },
   "devDependencies": {
     "babel-plugin-jsx-control-statements": "^3.2.8",
+    "chai": "^4.1.2",
     "concurrently": "^3.5.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-import-resolver-webpack": "^0.10.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-react": "^7.8.1",
+    "sinon": "^6.1.4",
     "webpack-cli": "^2.1.3"
   }
 }
