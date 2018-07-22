@@ -18,6 +18,21 @@ export default function books(state = defaultState, action) {
       return Object.assign({}, state, {
         selectedCategoryId: action.id,
       });
+    case 'CHANGE_CATEGORY_NAME': {
+      const updateCategories = [...state.categories];
+
+      updateCategories.find((item, index) => {
+        if (item.id === action.id) {
+          updateCategories[index].name = action.name;
+          return true;
+        }
+        return false;
+      });
+
+      return Object.assign({}, state, {
+        categories: updateCategories,
+      });
+    }
     default:
       return state;
   }

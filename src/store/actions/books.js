@@ -14,13 +14,6 @@ export const saveBooks = (books) => {
   };
 };
 
-export const selectCategory = (id) => {
-  return {
-    type: 'SELECT_CATEGORY',
-    id,
-  };
-};
-
 export const fetchCategoriesData = (url) => {
   return (dispatch) => {
     fetch(url).then((result) => {
@@ -34,5 +27,20 @@ export const fetchBooksData = (url) => {
     fetch(url).then((result) => {
       dispatch(saveBooks(result.data));
     });
+  };
+};
+
+export const selectCategory = (id) => {
+  return {
+    type: 'SELECT_CATEGORY',
+    id,
+  };
+};
+
+export const changeCategoryName = (id, name) => {
+  return {
+    type: 'CHANGE_CATEGORY_NAME',
+    id,
+    name,
   };
 };

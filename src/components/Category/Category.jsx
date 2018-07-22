@@ -22,6 +22,10 @@ export default class Category extends React.Component {
   }
 
   handleEditClick(e) {
+    if (e.target.value) {
+      this.props.changeCategoryName(this.props.category.id, e.target.value);
+    }
+
     this.setState({ isEdit: !this.state.isEdit });
   }
 
@@ -68,4 +72,5 @@ Category.propTypes = {
   category: PropTypes.object.isRequired,
   selectedCategoryId: PropTypes.number.isRequired,
   selectCategory: PropTypes.func.isRequired,
+  changeCategoryName: PropTypes.func.isRequired,
 };

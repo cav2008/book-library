@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Category from '../../components/Category/Category';
 
-import { selectCategory } from '../actions/books';
+import { selectCategory, changeCategoryName } from '../actions/books';
 
 function mapStateToProps(state, ownProps) {
   return {
@@ -15,6 +15,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     selectCategory,
+    changeCategoryName,
   }, dispatch);
 }
 
